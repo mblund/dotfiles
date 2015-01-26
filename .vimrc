@@ -1,5 +1,32 @@
 set nocompatible
 
+"Starting with Vundle config
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Bundle 'gmarik/vundle'
+Bundle 'vim-scripts/vtreeexplorer'
+Bundle 'derekwyatt/vim-scala'
+Bundle 'leafgarland/typescript-vim'
+Bundle 'lambdatoast/elm.vim'
+
+call vundle#end()            " required
+filetype plugin indent on     " required
+syntax on
+"
+" Brief help
+" :BundleList          - list configured bundles
+" :BundleInstall(!)    - install (update) bundles
+" :BundleSearch(!) foo - search (or refresh cache first) for foo
+" :BundleClean(!)      - confirm (or auto-approve) removal of unused bundles
+"
+" see :h vundle for more details or wiki for FAQ
+" End Vundle
+
 " A nice dark colorscheme
 colorscheme darkblue
 
@@ -76,3 +103,5 @@ else
     " :h head (last path component removed)
     " gs/ /\\ /  replace " " with "\ "
 endif
+
+
