@@ -11,8 +11,6 @@ call vundle#begin()
 Bundle 'gmarik/vundle'
 Bundle 'vim-scripts/vtreeexplorer'
 Bundle 'derekwyatt/vim-scala'
-Bundle 'leafgarland/typescript-vim'
-Bundle 'lambdatoast/elm.vim'
 
 call vundle#end()            " required
 filetype plugin indent on     " required
