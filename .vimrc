@@ -1,29 +1,44 @@
 set nocompatible
 
-"Starting with Vundle config
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" let Vundle manage Vundle, required
-Bundle 'gmarik/vundle'
-Bundle 'vim-scripts/vtreeexplorer'
-Bundle 'derekwyatt/vim-scala'
-
-call vundle#end()            " required
-filetype plugin indent on     " required
+" Optimize for fast terminal connections
+set ttyfast
+" Don’t add empty newlines at the end of files
+set binary
+set noeol
+" Enable syntax highlighting
 syntax on
-"
-" Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install (update) bundles
-" :BundleSearch(!) foo - search (or refresh cache first) for foo
-" :BundleClean(!)      - confirm (or auto-approve) removal of unused bundles
-"
-" see :h vundle for more details or wiki for FAQ
-" End Vundle
+" Highlight current line
+set cursorline
+" Show “invisible” characters
+set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
+set list
+" Highlight searches
+set hlsearch
+" Ignore case of searches
+set ignorecase
+" Highlight dynamically as pattern is typed
+set incsearch
+" Always show status line
+set laststatus=2
+" Enable mouse in all modes
+"set mouse=a
+" Disable error bells
+set noerrorbells
+" Don’t reset cursor to start of line when moving around.
+set nostartofline
+" Show the cursor position
+set ruler
+" Don’t show the intro message when starting Vim
+set shortmess=atI
+" Show the current mode
+set showmode
+" Show the filename in the window titlebar
+set title
+" Show the (partial) command as it’s being typed
+set showcmd
+" Start scrolling three lines before the horizontal window border
+set scrolloff=3
+
 
 " A nice dark colorscheme
 colorscheme darkblue
@@ -56,8 +71,8 @@ set nospell
 " Underline the current line
 set cul
 
-" Show line numbers
-set number
+" Show no line numbers
+set nonumber
 
 " Pretty menu with useful info about the current file
 set laststatus=2
@@ -101,5 +116,3 @@ else
     " :h head (last path component removed)
     " gs/ /\\ /  replace " " with "\ "
 endif
-
-

@@ -1,6 +1,6 @@
 # zsh init file
 
-fpath=(~/.zsh/functions usr/local/share/zsh-completions $fpath) 
+fpath=(~/.zsh/functions /usr/local/share/zsh-completions $fpath)
 
 # Only do this if your system has a global profile :)
 source /etc/profile
