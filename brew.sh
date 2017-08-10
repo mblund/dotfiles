@@ -18,13 +18,15 @@ brew install moreutils
 brew install findutils
 # Install GNU `sed`, overwriting the built-in `sed`.
 brew install gnu-sed --with-default-names
+
+#zsh
 brew install zsh
 brew install zsh-completions
 
 chsh -s /bin/zsh
 rm -f ~/.zcompdump
+chmod go-w '/usr/local/share/zsh'
 compinit
-chmod go-w '/usr/local/share'
 
 # Install `wget` with IRI support.
 brew install wget --with-iri
@@ -57,6 +59,13 @@ brew install pv
 brew install rename
 brew install ssh-copy-id
 brew install tree
+
+
+#cask
+brew cask install google-chrome
+brew cask install intellij-ideai-ce
+brew cask install tunnelblick
+brew cask install karabiner-elements
 
 # Remove outdated versions from the cellar.
 brew cleanup
