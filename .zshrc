@@ -51,7 +51,7 @@ alias gl='git log --graph --abbrev-commit --abbrev=6 --date=iso --pretty=format:
 UNAME=`uname` 
 if [[ ${UNAME} == "Darwin" ]]; then
     alias ls="ls -G"
-    export LSCOLORS=Gxfxcxdxbxegedabagacad
+    export LSCOLORS=gxfxcxdxbxegedabagacad
     
     bindkey '^[[H' beginning-of-line     # Home on OS X
     bindkey '^[[F' end-of-line           # End of line on OS X
