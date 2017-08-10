@@ -61,11 +61,18 @@ brew install ssh-copy-id
 brew install tree
 
 
+brew install sbt
+
 #cask
 brew cask install google-chrome
-brew cask install intellij-ideai-ce
+brew cask install intellij-idea-ce
 brew cask install tunnelblick
 brew cask install karabiner-elements
+brew cask install spotify
+brew cask install slack
+brew cask install java
 
+brew tap buo/cask-upgrade
+brew cu
 # Remove outdated versions from the cellar.
 brew cleanup
