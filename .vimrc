@@ -1,5 +1,5 @@
 set nocompatible
-
+set encoding=utf-8
 " Optimize for fast terminal connections
 set ttyfast
 " Don’t add empty newlines at the end of files
