@@ -38,7 +38,7 @@ brew install gnupg
 brew install vim --with-override-system-vi
 brew install grep
 #brew install openssh
-brew install screen
+#brew install screen
 
 # Install font tools.
 brew tap bramstein/webfonttools
@@ -50,7 +50,7 @@ brew install woff2
 brew install ack
 #brew install exiv2
 brew install git
-#brew install git-lfs
+brew install git-lfs
 #brew install imagemagick --with-webp
 brew install lynx
 brew install p7zip
@@ -66,11 +66,12 @@ brew install sbt
 #cask
 brew cask install google-chrome
 brew cask install intellij-idea-ce
-brew cask install tunnelblick
-brew cask install karabiner-elements
-brew cask install spotify
-brew cask install slack
-brew cask install java
+#brew cask install tunnelblick
+#brew cask install karabiner-elements
+#brew cask install spotify
+#brew cask install slack
+brew cask adoptopenjdk8
+brew cask adoptopenjdk11
 
 brew tap buo/cask-upgrade
 brew cu

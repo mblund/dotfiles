@@ -2,8 +2,6 @@
 
 cd "$(dirname "${BASH_SOURCE}")";
 
-git pull origin master;
-
 function doIt() {
 	rsync $1 --exclude ".git/" \
 		--exclude ".DS_Store" \
@@ -14,8 +12,7 @@ function doIt() {
 		--exclude "README.md" \
 		--exclude "brew.sh" \
 		--exclude "*.swp" \
-		-avh --no-perms . ~;
-	
+		-avh --no-perms . ~;	
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
@@ -29,7 +26,5 @@ else
 	if [[ $REPLY =~ ^[Dd]$ ]]; then
 		doIt --dry-run;
 	fi;
-
-
 fi;
 unset doIt;

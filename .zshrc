@@ -30,8 +30,8 @@ precmd() {
 # Environment variables
 
 # Only uncomment this if you have a recent version of keychain installed.
-#keychain --quiet ~/.ssh/id_rsa ~/.ssh/id_dsa ~/.ssh/identity
-#. ~/.keychain/${HOSTNAME}-sh
+keychain --quiet ~/.ssh/id_rsa ~/.ssh/id_dsa ~/.ssh/identity
+. ~/.keychain/${HOSTNAME}-sh
 
 # Prompts
 setopt prompt_subst
