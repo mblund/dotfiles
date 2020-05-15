@@ -1,4 +1,5 @@
 set nocompatible
+
 set encoding=utf-8
 " Optimize for fast terminal connections
 set ttyfast
@@ -10,8 +11,9 @@ syntax on
 " Highlight current line
 set cursorline
 " Show “invisible” characters
-set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
-set list
+" #set lcs=tab:▸\ ,trail:·,eol:¬,nbs
+" dollar in end of line
+"set list
 " Highlight searches
 set hlsearch
 " Ignore case of searches

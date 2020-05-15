@@ -2,8 +2,9 @@
     path = ~/.gitconfig-extra
 
 [alias]
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit --all
 
-	# View abbreviated SHA, description, and history graph of the latest 20 commits
+    # View abbreviated SHA, description, and history graph of the latest 20 commits
 	l = log --pretty=oneline -n 20 --graph --abbrev-commit
 
 	# View the current working tree status using the short format
@@ -105,6 +106,7 @@
 	# Prevent showing files whose names contain non-ASCII symbols as unversioned.
 	# http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
 	precomposeunicode = false
+	autocrlf = input
 
 [color]
 
@@ -186,3 +188,14 @@
 [url "git://gist.github.com/"]
 
 	insteadOf = "gist:"
+[user]
+	name = Magnus Berglund
+	email = mblund@gmail.com
+
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[pull]
+	rebase = true

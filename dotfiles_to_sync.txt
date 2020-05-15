@@ -1,0 +1,7 @@
+.config
+.gitconfig
+.gitignore
+.profile
+.psqlrc
+.vimrc
+.zshrc

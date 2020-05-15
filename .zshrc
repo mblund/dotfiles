@@ -8,12 +8,49 @@ if [ -f ~/.profile ] ; then
     source ~/.profile
 fi
 
+export LC_ALL=sv_SE.UTF-8
+
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+
+# activate virtualenvwrapper
+#source /usr/local/bin/virtualenvwrapper.sh
+
+# pip should only run if there is a virtualenv currently activated
+export PIP_REQUIRE_VIRTUALENV=true
+
+# create commands to override pip restriction.
+# use `gpip` or `gpip3` to force installation of
+# a package in the global python environment
+gpip(){
+   PIP_REQUIRE_VIRTUALENV="" pip "$@"
+}
+gpip3(){
+   PIP_REQUIRE_VIRTUALENV="" pip3 "$@"
+}
+
+
+function setjdk() {
+  if [ $# -ne 0 ]; then
+   removeFromPath '/System/Library/Frameworks/JavaVM.framework/Home/bin'
+   if [ -n "${JAVA_HOME+x}" ]; then
+    removeFromPath $JAVA_HOME
+   fi
+   export JAVA_HOME=`/usr/libexec/java_home -v $@`
+   export PATH=$JAVA_HOME/bin:$PATH
+  fi
+ }
+ function removeFromPath() {
+  export PATH=$(echo $PATH | sed -E -e "s;:$1;;" -e "s;$1:?;;")
+ }
+setjdk 1.8
+
+
 # Exports
 export PATH=/usr/local/bin:/opt/local/bin:/opt/local/sbin:$PATH
 export MANPATH=/opt/local/share/man:$MANPATH
 export EDITOR=vim
 
-# Autoloads 
+# Autoloads
 autoload -U compinit
 compinit
 autoload -Uz vcs_info
@@ -211,3 +248,14 @@ bindkey '^P' up-line-or-history
 bindkey '^N' down-line-or-history
 
 bindkey '^[[Z' reverse-menu-complete # Shift-tab reverse completion
+
+
+function zle-line-init zle-keymap-select {
+    VIM_PROMPT="%{$fg_bold[yellow]%} [% NORMAL]%  %{$reset_color%}"
+    RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/} $EPS1"
+    zle reset-prompt
+}
+
+zle -N zle-line-init
+zle -N zle-keymap-select
+export KEYTIMEOUT=1
