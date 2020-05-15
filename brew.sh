@@ -59,13 +59,17 @@ brew install pv
 brew install rename
 brew install ssh-copy-id
 brew install tree
-
+brew install colordiff
 
 brew install sbt
+brew install awscli
+brew install aws-sam-cli
+
+brew install python
 
 #cask
 brew cask install google-chrome
-brew cask install intellij-idea-ce
+#brew cask install intellij-idea-ce
 #brew cask install tunnelblick
 #brew cask install karabiner-elements
 #brew cask install spotify

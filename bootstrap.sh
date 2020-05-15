@@ -3,22 +3,13 @@
 cd "$(dirname "${BASH_SOURCE}")";
 
 function doIt() {
-	rsync $1 --exclude ".git/" \
-		--exclude ".DS_Store" \
-		--exclude "bootstrap.sh" \
-		--exclude "macos.sh" \
-		--exclude "cleanup.sh" \
-		--exclude "LICENSE-MIT.txt" \
-		--exclude "README.md" \
-		--exclude "brew.sh" \
-		--exclude "*.swp" \
-		-avh --no-perms . ~;	
+	rsync $1 --files-from dotfiles_to_sync.txt -avh --no-perms . ~;	
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
 	doIt;
 else
-	read -p "This may overwrite existing files in your home directory. Are you sure? (y/n or just d for dry-run) " -n 1;
+	read -p "This may overwrite existing files in your home directory. Are you sure? Only do this when bootstrapping a new computer (y/n or just d for dry-run) " -n 1;
 	echo "";
 	if [[ $REPLY =~ ^[Yy]$ ]]; then
 		doIt;
