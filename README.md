@@ -1,9 +1,9 @@
-Install prefered default values
+Install prefered default values 
 ```
 sudo ./macos.sh
 ```
 
-Copy some default settings .files
+Copy some default "dotfiles" settings 
 ```
 ./bootstrap.sh
 ```
@@ -25,7 +25,7 @@ Install all default applications
 
 ```
 
-#Python
+# Python
 (https://www.andreagrandi.it/2018/12/19/installing-python-and-virtualenv-on-osx/)
 Install python virtualenv globally  
 ```
