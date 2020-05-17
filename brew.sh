@@ -74,6 +74,9 @@ brew cask install google-chrome
 #brew cask install karabiner-elements
 #brew cask install spotify
 #brew cask install slack
+
+# https://github.com/AdoptOpenJDK/homebrew-openjdk
+brew tap AdoptOpenJDK/openjdk
 brew cask adoptopenjdk8
 brew cask adoptopenjdk11
 
